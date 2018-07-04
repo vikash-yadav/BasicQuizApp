@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    tools:context="com.example.android.finalquizapp.MainActivity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg"
+        android:orientation="vertical">
+
+        <!-- Text Displayed At Top -->
+
+        <TextView
+            android:id="@+id/mainHeading"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/textViewHeight"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/mainHeading"
+            android:textAllCaps="true"
+            android:textSize="40sp" />
+
+
+        <!-- 1st question -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/viewHeight" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/viewMargin"
+            android:layout_marginLeft="@dimen/viewMargin"
+            android:text="@string/questionOne"
+            android:textSize="@dimen/Display2" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/leftMargin"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/qOneOptionOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onButtonClicked"
+                android:text="@string/oneOptionOne"
+                android:textSize="@dimen/Display1" />
+
+            <RadioButton
+                android:id="@+id/qOneOptionTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onButtonClicked"
+                android:text="@string/oneOptionTwo"
+                android:textSize="@dimen/Display1" />
+
+            <RadioButton
+                android:id="@+id/qOneOptionThree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onButtonClicked"
+                android:text="@string/oneOptionThree"
+                android:textSize="@dimen/Display1" />
+
+            <RadioButton
+                android:id="@+id/qOneOptionFour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onButtonClicked"
+                android:text="@string/oneOptionFour"
+                android:textSize="@dimen/Display1" />
+
+
+        </RadioGroup>
+
+        <!-- 2nd question -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/viewHeight" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/viewMargin"
+            android:layout_marginLeft="@dimen/viewMargin"
+            android:text="@string/questionTwo"
+            android:textSize="@dimen/Display2" />
+
+        <CheckBox
+            android:id="@+id/twoOptionOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/leftMargin"
+            android:onClick="onCheckboxClicked"
+            android:text="@string/twoOptionOne"
+            android:textSize="@dimen/Display1" />
+
+        <CheckBox
+            android:id="@+id/twoOptionTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/leftMargin"
+            android:onClick="onCheckboxClicked"
+            android:text="@string/twoOptionTwo"
+            android:textSize="@dimen/Display1" />
+
+        <CheckBox
+            android:id="@+id/twoOptionThree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/leftMargin"
+            android:onClick="onCheckboxClicked"
+            android:text="@string/twoOptionThree"
+            android:textSize="@dimen/Display1" />
+
+        <CheckBox
+            android:id="@+id/twoOptionFour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/leftMargin"
+            android:onClick="onCheckboxClicked"
+            android:text="@string/twoOptionFour"
+            android:textSize="@dimen/Display1" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/viewHeight" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/viewMargin"
+            android:layout_marginLeft="@dimen/viewMargin"
+            android:text="@string/questionThree"
+            android:textSize="@dimen/Display2" />
+
+        <!-- 3rd question -->
+
+        <EditText
+            android:id="@+id/qThree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/viewMargin"
+            android:hint="@string/questionThreeHint"
+            android:inputType="textCapWords"
+            android:textSize="@dimen/Display1" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/viewHeight" />
+
+        <!-- 4th question -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/viewMargin"
+            android:layout_marginLeft="@dimen/viewMargin"
+            android:text="@string/questionFour"
+            android:textSize="@dimen/Display2" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/leftMargin"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/optionOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onButtonClicked"
+                android:text="@string/fourOptionOne"
+                android:textSize="@dimen/Display1" />
+
+            <RadioButton
+                android:id="@+id/optionTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onButtonClicked"
+                android:text="@string/fourOptionTwo"
+                android:textSize="@dimen/Display1" />
+
+            <RadioButton
+                android:id="@+id/optionThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onButtonClicked"
+                android:text="@string/fourOptionThree"
+                android:textSize="@dimen/Display1" />
+
+            <RadioButton
+                android:id="@+id/optionFour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onButtonClicked"
+                android:text="@string/fourOptionFour"
+                android:textSize="@dimen/Display1" />
+
+        </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/viewHeight" />
+
+        <!-- 5th question -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/viewMargin"
+            android:layout_marginLeft="@dimen/viewMargin"
+            android:text="@string/questionFive"
+            android:textSize="@dimen/Display2" />
+
+        <ImageView
+            android:layout_width="@dimen/imageWidth"
+            android:layout_height="@dimen/imgHeight"
+            android:layout_marginLeft="@dimen/imageLeftMargin"
+            android:layout_marginTop="@dimen/viewMargin"
+            android:background="@drawable/cricket" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/leftMargin"
+                android:layout_marginTop="@dimen/viewMargin"
+
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/oneOptionFive"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onButtonClicked"
+                    android:text="@string/fiveOptionOne"
+                    android:textSize="@dimen/Display1" />
+
+                <RadioButton
+                    android:id="@+id/twoOptionFive"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onButtonClicked"
+                    android:text="@string/fiveOptionTwo"
+                    android:textSize="@dimen/Display1" />
+
+                <RadioButton
+                    android:id="@+id/threeOptionFive"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onButtonClicked"
+                    android:text="@string/fiveOptionThree"
+                    android:textSize="@dimen/Display1" />
+
+                <RadioButton
+                    android:id="@+id/fourthOptionFive"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onButtonClicked"
+                    android:text="@string/fiveOptionFour"
+                    android:textSize="@dimen/Display1" />
+
+
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/viewHeight"
+            android:layout_margin="@dimen/viewLayMargin" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:onClick="submitQuiz"
+            android:text="@string/submitButton"
+            android:textSize="@dimen/Display1" />
+
+
+    </LinearLayout>
+
+</ScrollView>

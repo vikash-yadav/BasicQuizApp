@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">FinalQuizApp</string>
+    <string name="mainHeading">Cricket Quiz App</string>
+
+
+    <string name="questionOne">Question 1 - Which cricketer has taken most catches in ODI cricket ?</string>
+    <string name="oneOptionOne">Ricky Ponting</string>
+    <string name="oneOptionTwo">Jacques Kallis</string>
+    <string name="oneOptionThree">Mahela Jayawardene</string>
+    <string name="oneOptionFour">Mark Waugh</string>
+
+    <string name="questionTwo">Question 2 - Teams which had won the IPL Cup ?</string>
+    <string name="twoOptionOne">CSK</string>
+    <string name="twoOptionTwo">RCB</string>
+    <string name="twoOptionThree">KKR</string>
+    <string name="twoOptionFour">Pune Warriors</string>
+
+    <string name="questionThree">Question 3 - Indian played first test match against ?</string>
+    <string name="questionThreeHint"> Type your answer here</string>
+
+
+
+    <string name="questionFour">Question 4 - Which cricketer had scored highest individual score in Test Cricket</string>
+    <string name="fourOptionOne">Sanath Jayasuriya</string>
+    <string name="fourOptionTwo">Matthew Hayden</string>
+    <string name="fourOptionThree">Brian Lara</string>
+    <string name="fourOptionFour">Sachin Tendulkar</string>
+
+
+
+
+    <string name="questionFive">Question 5 - Identify the cricketer shown in below image ?</string>
+    <string name="fiveOptionOne">Virender Shewag</string>
+    <string name="fiveOptionTwo">M.S Dhoni</string>
+    <string name="fiveOptionThree">Sachin Tendulkar</string>
+    <string name="fiveOptionFour">Rahul Dravid</string>
+
+
+    <string name="submitButton">Submit</string>
+</resources>
