@@ -174,12 +174,16 @@ public class MainActivity extends AppCompatActivity {
 
         // Question Three
 
-        EditText questionThree = (EditText) findViewById(R.id.qThree);
-        String ansqwerThree = questionThree.getText().toString();
-        qThree = ansqwerThree.equals(getString(R.string.questionThree));
+        // EditText If the answered typed is equal to the right answer, it means one point more to the finalScore
+        EditText qThree = (EditText) findViewById(R.id.qThree);
+        String questionAnswer = qThree.getText().toString();
+            if (questionAnswer.equals("ENGLAND")) {
+            finalScore = finalScore++;
+        } else {
+            finalScore = finalScore + 0  ;
+        }
 
-        if (qThree)
-            finalScore++;
+
 
         // Question Four
 
