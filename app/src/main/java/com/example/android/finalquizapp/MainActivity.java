@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
         // EditText If the answered typed is equal to the right answer, it means one point more to the finalScore
         EditText qThree = (EditText) findViewById(R.id.qThree);
         String questionAnswer = qThree.getText().toString();
-            if (questionAnswer.equals("ENGLAND")) {
+            if (questionAnswer.equalsIgnoreCase("ENGLAND")) {
             finalScore = finalScore++;
         } else {
             finalScore = finalScore + 0  ;
@@ -190,12 +190,28 @@ public class MainActivity extends AppCompatActivity {
         if (qFourOpThree)
             finalScore++;
 
+        String result;
+        String win = "Win";
+        String improve_score = "Improve Score" ;
+
+        if (finalScore == 5)
+            result = win;
+        else
+            result = "Your Final Score is " + finalScore + " improve your score";
+
+        // Display Results
+
+        Context context = getApplicationContext();
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, result, duration);
+        toast.show();
+
+        // Reset Score
+
+        finalScore = 0;
     }
 
-        /**
-         * Radio button of question five
-         * Calculates the score depending on right or wrong button checked
-         */
     public void onRadioButtonQuestionFiveClicked(View view) {
         // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
@@ -226,26 +242,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Calculate Result
 
-        String result;
-        String win = "Win";
-        String improve_score = "Improve Score" ;
 
-        if (finalScore == 5)
-            result = win;
-        else
-            result = "Your Final Score is " + finalScore + " improve your score";
-
-        // Display Results
-
-        Context context = getApplicationContext();
-        int duration = Toast.LENGTH_SHORT;
-
-        Toast toast = Toast.makeText(context, result, duration);
-        toast.show();
-
-        // Reset Score
-
-        finalScore = 0;
     }
 
 
