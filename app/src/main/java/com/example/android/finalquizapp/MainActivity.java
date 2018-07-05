@@ -186,6 +186,40 @@ public class MainActivity extends AppCompatActivity {
         if (qFourOpThree)
             finalScore++;
 
+    }
+
+        /**
+         * Radio button of question five
+         * Calculates the score depending on right or wrong button checked
+         */
+    public void onRadioButtonQuestionFiveClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+        // Check which radio button was clicked
+        switch (view.getId()) {
+            case R.id.oneOptionFive:
+                if (checked)
+                    finalScore = finalScore + 0;
+                // Wrong answer means zero point to the score
+                break;
+            case R.id.twoOptionFive:
+                if (checked)
+                    finalScore = finalScore + 0;
+                // Wrong answer means zero point to the score
+                break;
+            case R.id.threeOptionFive:
+                if (checked)
+                    finalScore = finalScore + 1;
+                // Right answer add  1 to the score
+                break;
+
+            case R.id.fourthOptionFive:
+                if (checked)
+                    finalScore = finalScore + 0;
+                // Wrong answer means zero point to the score
+                break;
+        }
+
         // Calculate Result
 
         String result;
