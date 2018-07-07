@@ -19,20 +19,16 @@ public class MainActivity extends AppCompatActivity {
 
     int finalScore = 0;
 
+    boolean ansOne;
 
-    boolean qOneOpOne;
-    boolean qOneOpTwo;
-    boolean qOneOpThree;
-    boolean qOneOpFour;
-    boolean qTwoOpOne = false;
-    boolean qTwoOpTwo = false;
-    boolean qTwoOpThree = false;
-    boolean qTwoOpFour =false;
-    boolean qThree;
-    boolean qFourOpOne;
-    boolean qFourOpTwo;
-    boolean qFourOpThree;
-    boolean qFourOpFour;
+    boolean ansTwoOne;
+    boolean ansTwoTwo;
+    boolean ansTwoThree;
+    boolean ansTwoFour;
+
+    boolean ansFour;
+    boolean ansFive;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,67 +45,44 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.qOneOptionOne:
                 if (checked) {
-                    qOneOpOne = true;
-                    qOneOpTwo = false;
-                    qOneOpThree = false;
-                    qOneOpFour = false;
+                    ansOne = false;
                 }
                 break;
             case R.id.qOneOptionTwo:
                 if (checked) {
-                    qOneOpOne = false;
-                    qOneOpTwo = true;
-                    qOneOpThree = false;
-                    qOneOpFour = false;
+                    ansOne = false;
                 }
                 break;
             case R.id.qOneOptionThree:
                 if (checked) {
-                    qOneOpOne = false;
-                    qOneOpTwo = false;
-                    qOneOpThree = true;
-                    qOneOpFour = false;
+                    ansOne = true;
                 }
                 break;
 
             case R.id.qOneOptionFour:
                 if (checked) {
-                    qOneOpOne = false;
-                    qOneOpTwo = false;
-                    qOneOpThree = false;
-                    qOneOpFour = true;
+                    ansOne = false;
                 }
                 break;
             case R.id.optionOne:
                 if (checked) {
-                    qFourOpOne = true;
-                    qFourOpTwo = false;
-                    qFourOpThree = false;
-                    qOneOpFour = false;
+                    ansFour = false;
                 }
                 break;
             case R.id.optionTwo:
                 if (checked) {
-                    qFourOpOne = false;
-                    qFourOpTwo = true;
-                    qFourOpThree = false;
-                    qOneOpFour = false;
+                    ansFour = false;
                 }
                 break;
             case R.id.optionThree:
                 if (checked) {
-                    qFourOpOne = false;
-                    qFourOpTwo = false;
-                    qFourOpThree = true;
+                    ansFour = true;
                 }
                 break;
 
             case R.id.optionFour:
                 if (checked) {
-                    qFourOpOne = false;
-                    qFourOpTwo = false;
-                    qFourOpThree = false;
-                    qFourOpFour = true;
+                    ansFour = false;
                 }
                 break;
         }
@@ -124,75 +97,74 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.twoOptionOne:
                 if (checked) {
-                    qTwoOpOne = true;
+                    ansTwoOne = true;
                 } else {
-                    qTwoOpOne = false;
+                    ansTwoOne = false;
                 }
                 break;
             case R.id.twoOptionTwo:
                 if (checked) {
-                    qTwoOpTwo = true;
+                    ansTwoTwo = true;
                 } else {
-                    qTwoOpTwo = false;
+                    ansTwoTwo = false;
                 }
 
                 break;
             case R.id.twoOptionThree:
                 if (checked) {
-                    qTwoOpThree = true;
+                    ansTwoThree = true;
                 } else {
-                    qTwoOpThree = false;
+                    ansTwoThree = false;
                 }
                 break;
 
             case R.id.twoOptionFour:
                 if (checked) {
-                    qTwoOpThree = true;
+                    ansTwoFour = true;
                 } else {
-                    qTwoOpThree = true;
-
-                    break;
+                    ansTwoFour = false;
                 }
+                break;
+
         }
 
     }
 
-        // On clicking the submit button
+    // On clicking the submit button
 
     public void submitQuiz(View view) {
 
         // Calculation of the final score
         // Question One
-
-        if (qOneOpThree)
+        if (ansOne)
             finalScore++;
 
         // Question Two
-
-        if (qTwoOpOne && qTwoOpThree && !qTwoOpTwo)
+        if (ansTwoOne && ansTwoTwo && ansTwoThree && !ansTwoFour)
             finalScore++;
 
         // Question Three
-
         // EditText If the answered typed is equal to the right answer, it means one point more to the finalScore
-        EditText qThree = (EditText) findViewById(R.id.qThree);
+        EditText qThree = findViewById(R.id.qThree);
         String questionAnswer = qThree.getText().toString();
-            if (questionAnswer.equalsIgnoreCase("ENGLAND")) {
-            finalScore = finalScore++;
-        } else {
-            finalScore = finalScore + 0  ;
+        if (questionAnswer.equalsIgnoreCase("ENGLAND")) {
+            finalScore++;
         }
 
-
-
-        // Question Four
-
-        if (qFourOpThree)
+        //Question Four
+        if (ansFour)
             finalScore++;
+
+        //Question Four
+        if (ansFive)
+            finalScore++;
+
+
+// Calculate Result
 
         String result;
         String win = "Win";
-        String improve_score = "Improve Score" ;
+
 
         if (finalScore == 5)
             result = win;
@@ -201,17 +173,19 @@ public class MainActivity extends AppCompatActivity {
 
         // Display Results
 
-        Context context = getApplicationContext();
-        int duration = Toast.LENGTH_SHORT;
-
-        Toast toast = Toast.makeText(context, result, duration);
-        toast.show();
+        Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
 
         // Reset Score
 
         finalScore = 0;
+
+
     }
 
+    /**
+     * Radio button of question five
+     * Calculates the score depending on right or wrong button checked
+     */
     public void onRadioButtonQuestionFiveClicked(View view) {
         // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
@@ -219,32 +193,29 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.oneOptionFive:
                 if (checked)
-                    finalScore = finalScore + 0;
+                    ansFive = false;
                 // Wrong answer means zero point to the score
                 break;
             case R.id.twoOptionFive:
                 if (checked)
-                    finalScore = finalScore + 0;
+                    ansFive = false;
                 // Wrong answer means zero point to the score
                 break;
             case R.id.threeOptionFive:
                 if (checked)
-                    finalScore = finalScore + 1;
+                    ansFive = true;
                 // Right answer add  1 to the score
                 break;
 
             case R.id.fourthOptionFive:
                 if (checked)
-                    finalScore = finalScore + 0;
+                    ansFive = false;
                 // Wrong answer means zero point to the score
                 break;
         }
 
-        // Calculate Result
-
 
     }
-
 
 
 }
