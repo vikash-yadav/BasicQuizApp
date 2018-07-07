@@ -86,6 +86,29 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
         }
+        switch (view.getId()) {
+            case R.id.oneOptionFive:
+                if (checked)
+                    ansFive = false;
+                // Wrong answer means zero point to the score
+                break;
+            case R.id.twoOptionFive:
+                if (checked)
+                    ansFive = false;
+                // Wrong answer means zero point to the score
+                break;
+            case R.id.threeOptionFive:
+                if (checked)
+                    ansFive = true;
+                // Right answer add  1 to the score
+                break;
+
+            case R.id.fourthOptionFive:
+                if (checked)
+                    ansFive = false;
+                // Wrong answer means zero point to the score
+                break;
+        }
     }
 
     // For CheckBoxes
@@ -128,6 +151,8 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+
+
     }
 
     // On clicking the submit button
@@ -167,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         if (finalScore == 5)
-            result = win;
+            result = "You Scored Perfect " + finalScore + " You Win !";
         else
             result = "Your Final Score is " + finalScore + " improve your score";
 
@@ -180,39 +205,6 @@ public class MainActivity extends AppCompatActivity {
         finalScore = 0;
 
 
-    }
-
-    /**
-     * Radio button of question five
-     * Calculates the score depending on right or wrong button checked
-     */
-    public void onRadioButtonQuestionFiveClicked(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
-        // Check which radio button was clicked
-        switch (view.getId()) {
-            case R.id.oneOptionFive:
-                if (checked)
-                    ansFive = false;
-                // Wrong answer means zero point to the score
-                break;
-            case R.id.twoOptionFive:
-                if (checked)
-                    ansFive = false;
-                // Wrong answer means zero point to the score
-                break;
-            case R.id.threeOptionFive:
-                if (checked)
-                    ansFive = true;
-                // Right answer add  1 to the score
-                break;
-
-            case R.id.fourthOptionFive:
-                if (checked)
-                    ansFive = false;
-                // Wrong answer means zero point to the score
-                break;
-        }
 
 
     }
